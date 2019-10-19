@@ -3,6 +3,10 @@
 //
 //  Fundamental graph algorithms, experiments with the London rail network
 //
+//  Two mnemonics to remember
+//      BANDQ   Breadth-All-New-Discoveries-Queued
+//      DANONDS Depth-All-Neighbours-Of-New-Discoveries-Stacked
+//
 
 #include <iostream>
 #include <string>
@@ -100,6 +104,7 @@ int main()
 //
 //      Shorter still: Add newly discovered neighbours to queue
 //
+//      Mnemonic BANDQ Breadth-All-New-Discoveries-Queued
 
 void breadth_first_search( Station start, Station goal )
 {
@@ -149,6 +154,7 @@ void breadth_first_search( Station start, Station goal )
 //
 //      Shorter still: Add all neighbours of new discoveries to stack
 //
+//      Mnemonic DANONDS Depth-All-Neighbours-Of-New-Discoveries-Stacked
 
 void depth_first_search( Station start, Station goal )
 {
