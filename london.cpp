@@ -173,9 +173,9 @@ void depth_first_search( Station start, Station goal )
             for( Station t: neighbours )
             {
                 Vertex &w = g.vertexes[t];
-                if( !w.discovered )
+                if( !w.discovered )  // in theory we don't test this here, but...
                 {
-                    w.parent = &v;  // mark parent here because we won't know parent when we pop it later
+                    w.parent = &v;  // ...mark parent here because we won't know parent when we pop it later
 
                     // Found?                
                     if( w.s == goal )
@@ -183,6 +183,7 @@ void depth_first_search( Station start, Station goal )
                         g.show_route( start, goal );
                         return;  // success!
                     }
+                    //q.push_back(w.s); // Actually I think we could push here instead too, can't see any benefit in putting discovered neighbours into the queue
                 }
                 q.push_back(w.s);
             }
